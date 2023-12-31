@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</html><!-- views/result.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Highest Percentage Topper</h1>
+    <table border="1">
+        <% PercentageStudent.forEach(course=>{ %>
+
+        <thead>
+            <th colspan="2"> <%= course._id %></th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Username</th>
+                <th>Percentage</th>
+            </tr>
+            <%course.students.forEach(i=>{ %>
+                       
+                
+                <tr>
+                    <td><%= i.username %></td>
+                    <td><%= i.percentage %></td>
+                </tr>
+            <% }) %>
+        <% }) %>
+        </tbody>
+    </table>
+    <a href="/login" >LogOut</a>
+
+</body>
+</html>
